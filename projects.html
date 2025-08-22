@@ -1,77 +1,92 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Projects</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-          const navbarContainer = document.getElementById('navbar-container');
-          fetch('navbar.html?version=' + new Date().getTime()) // Cache busting
-            .then(response => response.text())
-            .then(data => {
-              navbarContainer.innerHTML = data;
-            })
-            .catch(error => console.error('Error loading navbar:', error));
-        });
-    </script>
+  <meta charset="UTF-8">
+  <title>Projects</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const navbarContainer = document.getElementById('navbar-container');
+      fetch('navbar.html?version=' + new Date().getTime()) // Cache busting
+        .then(r => r.text())
+        .then(html => navbarContainer.innerHTML = html)
+        .catch(err => console.error('Error loading navbar:', err));
+    });
+  </script>
 </head>
 <body>
-    <header class="header">
-        <div id="navbar-container"></div>
-    </header>
-    <div class="container">
-        <main>
-            <section id="projects">
-                <h2>Projects / Other Experience 📲</h2>
-                <div class="project-item">
-                    <div class="info">
-                        <h3>PupPals - Social App for Dogs</h3>
-                        <p><i>Feb 2024</i></p>
-                        <ul>
-                            <li>Developing.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="project-item">
-                    <div class="info">
-                        <h3>Math Education Enhancement Project - <a href="https://www.thethinkacademy.com/">Think Academy, TAL Education</a></h3>
-                        <p><i>Dec 2023</i></p>
-                        <ul>
-                            <li>Implemented interactive tools to generate detailed reports on students’ performance with <strong>Java</strong>, facilitating personalized learning experiences aligned with state standards.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="project-item">
-                    <div class="info">
-                        <h3>Real-Time Voting Client-Server Application</h3>
-                        <p><i>Dec 2023</i></p>
-                        <ul>
-                            <li>Implemented client and server components of a web application for real-time polling friends in decision-making processes using <strong>TypeScript</strong>.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="project-item">
-                    <div class="info">
-                        <h3>Senerify - <a href="https://www.seattlechinesechamber.org/">Chinese Chamber of Commerce Program</a></h3>
-                        <p><i>Nov 2022</i></p>
-                        <ul>
-                            <li>Collaborated with team members from the Chinese Chamber of Commerce, worked as a backend developer, and developed a prototype website with <strong>JS</strong> and <strong>CSS</strong>, aimed at assisting college students in solving mental health issues.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="project-item">
-                    <div class="info">
-                        <h3>Buddies - Project Designed during <a href="https://dh22.dubhacks.co/">DubHacks</a></h3>
-                        <p><i>Oct 2022</i></p>
-                        <ul>
-                            <li>Developed a social media app prototype with Figma, and implemented basic functionality in <strong>Android Studio</strong>.</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-        </main>
-    </div>
+  <header class="header">
+    <div id="navbar-container"></div>
+  </header>
+
+  <div class="container">
+    <main>
+      <section id="projects">
+        <h2>Projects 📂</h2>
+
+        <!-- Database / Transaction Mgmt -->
+        <div class="project-item">
+          <div class="info">
+            <h3>Database Application &amp; Transaction Management</h3>
+            <p><i>Mar 2024</i></p>
+            <ul>
+              <li>Designed and implemented a flight management database in <strong>Java</strong>.</li>
+              <li>Built a CLI backend service linked to <strong>Azure</strong> for efficient queries and transaction handling.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Math Education Enhancement -->
+        <div class="project-item">
+          <div class="info">
+            <h3>Math Education Enhancement Project</h3>
+            <p><i>Think Academy, TAL Education; Dec 2023</i></p>
+            <ul>
+              <li>Created interactive tools with <strong>Java</strong> to generate personalized student performance reports.</li>
+              <li>Aligned outputs with state standards to support individualized learning paths.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Real-Time Voting -->
+        <div class="project-item">
+          <div class="info">
+            <h3>Real-Time Voting Client–Server Application</h3>
+            <p><i>Dec 2023</i></p>
+            <ul>
+              <li>Implemented client and server components of a polling app using <strong>TypeScript</strong>.</li>
+              <li>Enabled friends to conduct real-time voting for decision-making processes.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Senerify -->
+        <div class="project-item">
+          <div class="info">
+            <h3>Senerify – <a href="https://www.seattlechinesechamber.org/">Chinese Chamber of Commerce Program</a></h3>
+            <p><i>Nov 2022</i></p>
+            <ul>
+              <li>Collaborated as backend developer using <strong>JS</strong> and <strong>CSS</strong>.</li>
+              <li>Developed a prototype website aimed at supporting college students’ mental health needs.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Buddies -->
+        <div class="project-item">
+          <div class="info">
+            <h3>Buddies – Designed during <a href="https://dh22.dubhacks.co/">DubHacks</a></h3>
+            <p><i>Oct 2022</i></p>
+            <ul>
+              <li>Developed a social media app prototype with <strong>Figma</strong>.</li>
+              <li>Implemented basic functionality in <strong>Android Studio</strong>.</li>
+            </ul>
+          </div>
+        </div>
+
+      </section>
+    </main>
+  </div>
 </body>
 </html>

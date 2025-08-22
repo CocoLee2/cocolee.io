@@ -70,7 +70,7 @@ nav ul li.brand a {
 /* Main content container */
 .container {
     max-width: 1200px;
-    margin: 0 auto; /* Center the container */
+    margin: 0 auto;
     padding: 120px 20px 20px;
     display: flex;
     flex-direction: column;
@@ -84,11 +84,17 @@ main {
     padding: 20px;
 }
 
-/* Section styles */
+/* Section container (统一 About/Experience/Projects/Publication) */
 section {
-    margin-bottom: 30px;
-    padding-top: 10px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin-bottom: 30px;
+  max-width: 1000px;
+  width: 100%; 
 }
+
 
 .about-content {
     display: flex;
@@ -187,7 +193,8 @@ td {
 
 /* Experience and project item styles */
 .experience-item,
-.project-item {
+.project-item,
+.pub-item {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
@@ -226,3 +233,11 @@ ul {
 }
 
 
+.pub_item {
+  line-height: 2;
+  margin-left: 1.2em; 
+}
+
+.pub_item li {
+  margin-bottom: 14px;
+}
