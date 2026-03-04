@@ -6,6 +6,9 @@
   <meta name="keywords" content="Coco K. Lee, UW, Coco Lee">
   <meta name="author" content="Coco K. Lee">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#c6e2ff">
+  <!-- Google font for improved typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="styles.css">
   <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -14,12 +17,23 @@
         .then(r => r.text())
         .then(html => navbarContainer.innerHTML = html)
         .catch(err => console.error('Error loading navbar:', err));
+
+      // theme toggle
+      const toggle = document.getElementById('theme-toggle');
+      if (toggle) {
+        toggle.addEventListener('click', () => {
+          document.body.classList.toggle('dark');
+          toggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+        });
+      }
     });
   </script>
 </head>
 <body>
   <header class="header">
     <div id="navbar-container"></div>
+    <!-- theme toggle button; text set via JS -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark mode">🌙</button>
   </header>
 
   <div class="container">
@@ -77,19 +91,13 @@
             <li>
             <strong>Coco Lee</strong>, Lucas Lee, Cheng Ma, Sam Ross, Jayne Everson, and R. Benjamin Shapiro.
             2024. <em>Software Design Beyond the Code</em>. 
-            In <span>Washington NASA Space Grant Poster Session</span>, Seattle, WA, August 16, 2024. 
-            <a class="about-link" style="font-weight: normal;" href="https://shorturl.at/NNtdQ" target="_blank" rel="noopener">
-                Poster
-            </a>.
+            In <span>Washington NASA Space Grant Poster Session</span>, Seattle, WA, August 16, 2024.
             </li>
 
             <li>
             Grace Bunarto and <strong>Coco Lee</strong>. 
             2024. <em>Making Dog Wearables is Hard</em>. 
-            In <span>DUB Research Poster Symposium</span>, Seattle, WA, August 6, 2024. 
-            <a class="about-link" style="font-weight: normal;" href="https://shorturl.at/drHBi" target="_blank" rel="noopener">
-                Poster
-            </a>.
+            In <span>DUB Research Poster Symposium</span>, Seattle, WA, August 6, 2024.
             </li>
         </ol>
         </section>

@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <title>Projects</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#c6e2ff">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="styles.css">
   <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -12,12 +14,21 @@
         .then(r => r.text())
         .then(html => navbarContainer.innerHTML = html)
         .catch(err => console.error('Error loading navbar:', err));
+
+      const toggle = document.getElementById('theme-toggle');
+      if (toggle) {
+        toggle.addEventListener('click', () => {
+          document.body.classList.toggle('dark');
+          toggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+        });
+      }
     });
   </script>
 </head>
 <body>
   <header class="header">
     <div id="navbar-container"></div>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark mode">🌙</button>
   </header>
 
   <div class="container">
