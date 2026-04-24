@@ -1,143 +1,119 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Experience</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#c6e2ff">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const navbarContainer = document.getElementById('navbar-container');
-        fetch('navbar.html?version=' + new Date().getTime()) // Cache busting
-          .then(response => response.text())
-          .then(data => {
-            navbarContainer.innerHTML = data;
-          })
-          .catch(error => console.error('Error loading navbar:', error));
+  <meta charset="UTF-8">
+  <title>Research – Coco K. Lee</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      fetch('navbar.html?v=' + Date.now())
+        .then(r => r.text())
+        .then(html => document.getElementById('navbar-container').innerHTML = html)
+        .catch(e => console.error('navbar load error:', e));
 
-        const toggle = document.getElementById('theme-toggle');
-        if (toggle) {
-          toggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark');
-            toggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
-          });
-        }
-      });
-    </script>
+      const toggle = document.getElementById('theme-toggle');
+      if (toggle) {
+        toggle.addEventListener('click', () => {
+          document.body.classList.toggle('dark');
+          toggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+        });
+      }
+    });
+  </script>
 </head>
 <body>
-    <header class="header">
-        <div id="navbar-container"></div>
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark mode">🌙</button>
-    </header>
-    <div class="container">
-        <main>
-            <!-- Research Experience -->
-            <section id="research-experience">
-                <h2>Research Experience 🔬</h2>
+  <header class="header">
+    <div id="navbar-container"></div>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark mode">🌙</button>
+  </header>
 
-                <div class="experience-item">
-                    <div class="info">
-                        <h3>Project Lead – PupPals (Dog Anxiety Tech) @ UW</h3>
-                        <p><i>Advised by Prof. R. Benjamin Shapiro; @ Seattle, US; Apr 2024 – Dec 2024</i></p>
-                        <ul>
-                            <li>Developed hardware with Micro:bit & Arduino sensors to monitor dog vocalization and movement.</li>
-                            <li>Built software to analyze data and provide real-time calming feedback.</li>
-                            <li>Conducted field studies and interviews for iterative design improvements.</li>
-                        </ul>
-                    </div>
-                </div>
+  <div class="container">
+    <main>
 
-                <div class="experience-item">
-                    <div class="info">
-                        <h3>Researcher – InfiniCard (Interactive Design Tool) @ UW</h3>
-                        <p><i>Advised by Prof. R. Benjamin Shapiro; @ Seattle, US; Apr 2024 – Dec 2024</i></p>
-                        <ul>
-                            <li>Implemented partial functionality of the drawing canvas tool using <strong>Python</strong>, <strong>Flutter</strong>, and <strong>Dart</strong>.</li>
-                            <li>Conducted user research through surveys, interviews, and focus groups.</li>
-                            <li>Processed data with Computer Vision to assist in data labeling.</li>
-                        </ul>
-                    </div>
-                </div>
+      <!-- RESEARCH EXPERIENCE -->
+      <section id="research-experience">
+        <h2>Research Experience</h2>
 
-                <div class="experience-item">
-                    <div class="info">
-                        <h3>Research Assistant – ModelUS (Machine Learning Education) @ UW</h3>
-                        <p><i>Advised by Prof. R. Benjamin Shapiro; @ Seattle, US; Jan 2024 – Apr 2024</i></p>
-                        <ul>
-                            <li>Implemented iOS & Android app with <strong>Flutter</strong>, ensuring cross-device usability.</li>
-                            <li>Integrated <strong>Firebase</strong> for real-time updates and secure data storage.</li>
-                            <li>Adapted ML models for high school students to support hands-on ML learning.</li>
-                        </ul>
-                    </div>
-                </div>
+        <!-- Computing Intelligence & Education Lab (current) -->
+        <div class="experience-item">
+          <div class="exp-header">
+            <span class="exp-title">
+              Research Assistant –
+              <a class="about-link" href="https://sites.google.com/site/yshicv/CIEL" target="_blank" rel="noopener">
+                Computing Intelligence &amp; Education Lab (CIEL)
+              </a>, Utah State University
+              <span class="exp-current">Current</span>
+            </span>
+            <span class="exp-duration">Feb 2026 – Present</span>
+          </div>
+          <p class="exp-meta">Advised by Prof. Yang Shi · Logan, UT</p>
+          <ul>
+            <li>Explore applications of AI in education, focusing on improving learning efficiency and engagement.</li>
+            <li>Conduct data analysis to identify patterns in student behavior and learning outcomes.</li>
+            <li>Prototype early-stage system concepts for AI-assisted feedback and adaptive learning workflows.</li>
+            <li>Collaborate with the research team to iterate on problem formulation and experimental direction.</li>
+          </ul>
+        </div>
 
-                <div class="experience-item">
-                    <div class="info">
-                        <h3>Research Assistant @ SEAL Lab, UW</h3>
-                        <p><i>Advised by Prof. Alexander V. Mamishev; @ Seattle, US; Sept 2022 – Dec 2022</i></p>
-                        <ul>
-                            <li>Developed <strong>Python</strong> software for Single-Walled Carbon Nanotube (SWCNT) sensors.</li>
-                            <li>Enhanced software reliability for ammonia detection, benefiting underserved communities.</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
+        <!-- PupPals -->
+        <div class="experience-item">
+          <div class="exp-header">
+            <span class="exp-title">Project Lead – PupPals (Dog Anxiety Tech), UW</span>
+            <span class="exp-duration">Apr 2024 – Dec 2024</span>
+          </div>
+          <p class="exp-meta">Advised by Prof. R. Benjamin Shapiro · Seattle, US</p>
+          <ul>
+            <li>Conceptualized and led a project aimed at alleviating dog anxiety through technology.</li>
+            <li>Developed hardware with Micro:bit &amp; Arduino sensors to monitor dog vocalization and movement.</li>
+            <li>Built software to analyze data and provide real-time calming feedback.</li>
+            <li>Conducted field studies and user interviews for iterative design improvements.</li>
+          </ul>
+        </div>
 
-            <!-- Work Experience -->
-            <section id="work-experience">
-                <h2>Work Experience 💼</h2>
+        <!-- InfiniCard -->
+        <div class="experience-item">
+          <div class="exp-header">
+            <span class="exp-title">Researcher – InfiniCard (Multimodal UI Design Tool), UW</span>
+            <span class="exp-duration">Apr 2024 – Dec 2024</span>
+          </div>
+          <p class="exp-meta">Led by Sam Ross, advised by Prof. R. Benjamin Shapiro · Seattle, US</p>
+          <ul>
+            <li>Built core modules for a sketch-based UI prototyping system using Python and Flutter.</li>
+            <li>Implemented computer vision pipelines for multimodal input recognition.</li>
+            <li>Conducted usability studies contributing to a research publication.</li>
+          </ul>
+        </div>
 
-                <div class="experience-item">
-                    <div class="info">
-                        <h3>Computer Science Instructor @ Coding Mind Academy</h3>
-                        <p><i>@ Seattle, US; 2024 – Current</i></p>
-                        <ul>
-                            <li>Teach CS concepts including Python, Java, and Scratch to K–12 students.</li>
-                            <li>Designed interactive coding lessons and project-based learning modules.</li>
-                            <li>Mentored students in problem-solving and computational thinking skills.</li>
-                        </ul>
-                    </div>
-                </div>
+        <!-- ModelUS -->
+        <div class="experience-item">
+          <div class="exp-header">
+            <span class="exp-title">Research Assistant – ModelUS (Machine Learning Education), UW</span>
+            <span class="exp-duration">Jan 2024 – Apr 2024</span>
+          </div>
+          <p class="exp-meta">Advised by Prof. R. Benjamin Shapiro · Seattle, US</p>
+          <ul>
+            <li>Built cross-platform iOS &amp; Android app using Flutter with integrated Firebase backend.</li>
+            <li>Adapted machine learning models into interactive components for high school students.</li>
+            <li>Designed system workflows to support real-time updates and user interaction.</li>
+          </ul>
+        </div>
 
-                <div class="experience-item">
-                    <div class="info">
-                        <h3>Math Content Teacher @ Think Academy</h3>
-                        <p><i>After-School Math Program; @ Seattle, US; Aug 2022 – Jun 2024</i></p>
-                        <ul>
-                            <li>Delivered weekly math classes with comprehensive lesson plans.</li>
-                            <li>Created engaging classroom environments supporting diverse learning needs.</li>
-                            <li>Provided detailed feedback to parents on student progress and strategies.</li>
-                        </ul>
-                    </div>
-                </div>
+        <!-- SEAL -->
+        <div class="experience-item">
+          <div class="exp-header">
+            <span class="exp-title">Research Assistant – Sensors, Energy &amp; Automation Lab (SEAL), UW</span>
+            <span class="exp-duration">Sept 2022 – Dec 2022</span>
+          </div>
+          <p class="exp-meta">Advised by Prof. Alexander V. Mamishev · Seattle, US</p>
+          <ul>
+            <li>Developed Python software for Single-Walled Carbon Nanotube (SWCNT) sensors.</li>
+            <li>Enhanced software reliability for ammonia detection, benefiting underserved communities.</li>
+          </ul>
+        </div>
+      </section>
 
-                <div class="experience-item">
-                    <div class="info">
-                        <h3>Data Intern @ ByteDance</h3>
-                        <p><i>Dali Education – Educator Service; @ Beijing, China; Nov 2021 – Jan 2022</i></p>
-                        <ul>
-                            <li>Built platform with <strong>JS</strong> and <strong>SaaS</strong> for real-time updates to 7,000+ educators.</li>
-                            <li>Conducted data analysis using <strong>R</strong> and <strong>SQL</strong> for daily reports.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="experience-item">
-                    <div class="info">
-                        <h3>Software Development Intern @ Topos Inc.</h3>
-                        <p><i>Social App Startup; @ Shanghai, China; Oct 2020 – Nov 2021</i></p>
-                        <ul>
-                            <li>Designed product features using <strong>Figma</strong>.</li>
-                            <li>Led user acquisition during beta, reaching 200+ users in one week.</li>
-                            <li>Optimized database functionality and search algorithms.</li>
-                        </ul>
-                    </div>
-                </div>
-            </section> <!-- end work-experience -->
-        </main>
-    </div>
+    </main>
+  </div>
 </body>
 </html>

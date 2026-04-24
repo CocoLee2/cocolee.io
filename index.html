@@ -3,22 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <title>Coco K. Lee</title>
-  <meta name="keywords" content="Coco K. Lee, UW, Coco Lee">
+  <meta name="keywords" content="Coco K. Lee, UW, Computing Education, HCI">
   <meta name="author" content="Coco K. Lee">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#c6e2ff">
-  <!-- Google font for improved typography -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="styles.css">
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const navbarContainer = document.getElementById('navbar-container');
-      fetch('navbar.html?version=' + new Date().getTime())
+    document.addEventListener('DOMContentLoaded', function () {
+      fetch('navbar.html?v=' + Date.now())
         .then(r => r.text())
-        .then(html => navbarContainer.innerHTML = html)
-        .catch(err => console.error('Error loading navbar:', err));
+        .then(html => document.getElementById('navbar-container').innerHTML = html)
+        .catch(e => console.error('navbar load error:', e));
 
-      // theme toggle
       const toggle = document.getElementById('theme-toggle');
       if (toggle) {
         toggle.addEventListener('click', () => {
@@ -32,106 +27,141 @@
 <body>
   <header class="header">
     <div id="navbar-container"></div>
-    <!-- theme toggle button; text set via JS -->
     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark mode">🌙</button>
   </header>
 
   <div class="container">
     <main>
+
       <!-- ABOUT -->
       <section id="about">
-        <h2>About Me 👋</h2>
+        <h2>About</h2>
         <div class="about-content">
+
           <div class="about-image">
-            <a href="images/profile.jpg">
-              <img class="profile-img" alt="Portrait of Coco K. Lee" src="images/profile.jpg">
-            </a>
+            <img class="profile-img" alt="Portrait of Coco K. Lee" src="images/profile.jpg">
+            <div class="profile-links">
+              <a href="mailto:cocolee.k2@gmail.com">Email</a>
+              <a href="https://github.com/CocoLee2" target="_blank" rel="noopener">GitHub</a>
+              <a href="https://www.linkedin.com/in/coco-keliyi-lee-9b12841aa/" target="_blank" rel="noopener">LinkedIn</a>
+              <a href="https://scholar.google.com/citations?user=9nvDcwoAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+            </div>
           </div>
+
           <div class="about-text">
             <p>
-              Hi! I’m <strong>Coco K. Lee</strong>. I earned a B.S. in Computer Science from the
-              <a class="about-link" href="https://www.washington.edu/">University of Washington</a>
-              (<a class="about-link" href="https://www.cs.washington.edu/">Paul G. Allen School</a>).
+              I am <strong>Coco K. Lee</strong>, a B.S. Computer Science graduate from the
+              <a class="about-link" href="https://www.cs.washington.edu/">Paul G. Allen School</a> at the
+              <a class="about-link" href="https://www.washington.edu/">University of Washington</a>.
             </p>
             <p>
-              I’m broadly interested in <strong>Generative AI</strong>,
-              <strong>Computing Education</strong>, <strong>Human–Computer Interaction</strong>,
-              and <strong>Linguistics</strong>.
+              I am currently a research assistant at the
+              <a class="about-link" href="https://sites.google.com/site/yshicv/CIEL" target="_blank" rel="noopener">
+                Computing Intelligence &amp; Education Lab (CIEL)
+              </a>,
+              advised by Prof. Yang Shi at Utah State University,
+              exploring how AI and LLMs can improve learning efficiency and feedback in computing education.
             </p>
             <p>
               I previously worked with Prof.
               <a class="about-link" href="https://benshapi.ro/">R. Benjamin Shapiro</a> in the
-              <a class="about-link" href="https://www.computinged.uw.edu/research/">
-                LCI (Learning, Computing, and Imagination)
-              </a> Lab.
+              <a class="about-link" href="https://www.computinged.uw.edu/research/">LCI Lab</a>,
+              contributing to projects in multimodal UI design tools, machine learning education,
+              and dog-wearable sensing technology.
             </p>
             <p>
-              I love teaching. I’m currently a part-time CS instructor at <strong>Coding Mind Academy</strong>,
-              and I’ve taught math/coding in after-school programs.
+              I am also a part-time CS instructor at <strong>Coding Mind Academy</strong>,
+              teaching K–12 students programming and computational thinking.
             </p>
+
+            <p class="interests-label">Research Interests</p>
+            <ul class="interests-list">
+              <li>Computing Education</li>
+              <li>AI in Education</li>
+              <li>Human–Computer Interaction</li>
+              <li>Linguistics</li>
+            </ul>
           </div>
+
         </div>
       </section>
 
-      <!-- PUBLICATIONS (moved here) -->
+      <!-- PUBLICATIONS -->
       <section id="publications">
         <h2>Publications</h2>
-        <a class="about-link"href="https://scholar.google.com/citations?user=9nvDcwoAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+        <p style="margin: 0 0 14px; padding: 0; font-size: 0.88rem;">
+          <a class="about-link" href="https://scholar.google.com/citations?user=9nvDcwoAAAAJ&hl=en" target="_blank" rel="noopener">
+            Google Scholar profile
+          </a>
+        </p>
 
-        <ol class="pub_item">
-            <li>
-            Sam H. Ross, Yunseo Lee, <strong>Coco K. Lee</strong>, Jayne Everson, and R. Benjamin Shapiro. 
-            2025. <em>Affordances of Sketched Notations for Multimodal UI Design and Development Tools</em>. 
-            <span>arXiv preprint</span> 
-            <a class="about-link" style="font-weight: normal;" href="https://arxiv.org/abs/2508.09342" target="_blank" rel="noopener">
-                arXiv:2508.09342
-            </a>.
-            </li>
-
-            <li>
-            <strong>Coco Lee</strong>, Lucas Lee, Cheng Ma, Sam Ross, Jayne Everson, and R. Benjamin Shapiro.
-            2024. <em>Software Design Beyond the Code</em>. 
-            In <span>Washington NASA Space Grant Poster Session</span>, Seattle, WA, August 16, 2024.
-            </li>
-
-            <li>
-            Grace Bunarto and <strong>Coco Lee</strong>. 
-            2024. <em>Making Dog Wearables is Hard</em>. 
-            In <span>DUB Research Poster Symposium</span>, Seattle, WA, August 6, 2024.
-            </li>
-        </ol>
-        </section>
-
+        <ul class="pub-list">
+          <li>
+            <span class="pub-num">1.</span>
+            <span class="pub-body">
+              Sam H. Ross, Yunseo Lee, <strong>Coco K. Lee</strong>, Jayne Everson, and R. Benjamin Shapiro.
+              2025. <em>Affordances of Sketched Notations for Multimodal UI Design and Development Tools.</em>
+              arXiv preprint
+              <a class="about-link" href="https://arxiv.org/abs/2508.09342" target="_blank" rel="noopener">arXiv:2508.09342</a>.
+              <span class="pub-badge paper">Paper</span>
+            </span>
+          </li>
+          <li>
+            <span class="pub-num">2.</span>
+            <span class="pub-body">
+              <strong>Coco Lee</strong>, Lucas Lee, Cheng Ma, Sam Ross, Jayne Everson, and R. Benjamin Shapiro.
+              2024. <em>Software Design Beyond the Code.</em>
+              Washington NASA Space Grant Poster Session, Seattle, WA, August 16, 2024.
+              <span class="pub-badge poster">Poster</span>
+            </span>
+          </li>
+          <li>
+            <span class="pub-num">3.</span>
+            <span class="pub-body">
+              Grace Bunarto and <strong>Coco Lee</strong>.
+              2024. <em>Making Dog Wearables is Hard.</em>
+              DUB Research Poster Symposium, Seattle, WA, August 6, 2024.
+              <span class="pub-badge poster">Poster</span>
+            </span>
+          </li>
+        </ul>
+      </section>
 
       <!-- SKILLS -->
       <section id="skills">
-        <h2>Skills 💪</h2>
-        <div class="skills-content">
-          <div class="skills-text">
-            <h3>Coursework:</h3>
-            <p>
-              Data Structures; Systems Programming; Software Design &amp; Implementation;
-              Artificial Intelligence; Human–Computer Interaction; Data Management;
-              Computing Education Seminar; Computer Security; Computer Vision; Autonomous Robotics.
-            </p>
-
-            <h3>Technical:</h3>
-            <p>
-              Java, Python, R, C, C++, TypeScript, HTML/CSS, Luau · Git, Flutter, Firebase,
-              VS Code, IntelliJ, Figma, Android Studio, R&nbsp;Studio, Roblox Studio · Linux
-            </p>
-
-            <h3>Languages:</h3>
-            <p>Chinese (native), English (fluent); French/Spanish/Japanese (elementary).</p>
+        <h2>Skills &amp; Coursework</h2>
+        <div class="skills-grid">
+          <div class="skills-category">
+            <h3>Programming Languages</h3>
+            <p>Java, Python, R, C, C++, TypeScript, JavaScript, SQL, HTML/CSS, Luau</p>
+          </div>
+          <div class="skills-category">
+            <h3>Frameworks &amp; Tools</h3>
+            <p>React, Node.js, Flask, Flutter, Firebase, Azure SQL, Git, Figma, Android Studio, Roblox Studio</p>
+          </div>
+          <div class="skills-category">
+            <h3>Relevant Coursework</h3>
+            <p>Data Structures · Systems Programming · AI · HCI · Data Management · Computer Vision · Computer Security · Computing Education · Autonomous Robotics</p>
+          </div>
+          <div class="skills-category">
+            <h3>Languages</h3>
+            <p>Chinese (native) · English (fluent) · French / Spanish / Japanese (elementary)</p>
           </div>
         </div>
       </section>
 
       <!-- CONTACT -->
       <section id="contact">
-        <h2>Contact Me 📧</h2>
-        <p>Email: <a href="mailto:cocolee.k2@gmail.com">cocolee.k2@gmail.com</a></p>
+        <h2>Contact</h2>
+        <p style="padding:0; margin: 0 0 10px;">Feel free to reach out for research collaborations or questions.</p>
+        <div class="contact-row">
+          <a href="mailto:cocolee.k2@gmail.com">cocolee.k2@gmail.com</a>
+          <a href="https://github.com/CocoLee2" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/coco-keliyi-lee-9b12841aa/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://scholar.google.com/citations?user=9nvDcwoAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+        </div>
       </section>
+
     </main>
   </div>
 </body>

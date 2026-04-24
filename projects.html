@@ -2,18 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Projects</title>
+  <title>Projects – Coco K. Lee</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#c6e2ff">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="styles.css">
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const navbarContainer = document.getElementById('navbar-container');
-      fetch('navbar.html?version=' + new Date().getTime()) // Cache busting
+    document.addEventListener('DOMContentLoaded', function () {
+      fetch('navbar.html?v=' + Date.now())
         .then(r => r.text())
-        .then(html => navbarContainer.innerHTML = html)
-        .catch(err => console.error('Error loading navbar:', err));
+        .then(html => document.getElementById('navbar-container').innerHTML = html)
+        .catch(e => console.error('navbar load error:', e));
 
       const toggle = document.getElementById('theme-toggle');
       if (toggle) {
@@ -34,66 +31,72 @@
   <div class="container">
     <main>
       <section id="projects">
-        <h2>Projects 📂</h2>
+        <h2>Projects</h2>
 
-        <!-- Database / Transaction Mgmt -->
         <div class="project-item">
-          <div class="info">
-            <h3>Database Application &amp; Transaction Management</h3>
-            <p><i>Mar 2024</i></p>
-            <ul>
-              <li>Designed and implemented a flight management database in <strong>Java</strong>.</li>
-              <li>Built a CLI backend service linked to <strong>Azure</strong> for efficient queries and transaction handling.</li>
-            </ul>
+          <div class="exp-header">
+            <span class="exp-title">Database Application &amp; Transaction Management</span>
+            <span class="exp-duration">Mar 2024</span>
           </div>
+          <p class="exp-meta">Course Project</p>
+          <ul>
+            <li>Designed and implemented a flight management database in Java.</li>
+            <li>Built a CLI backend service linked to Azure SQL for efficient queries and transaction handling.</li>
+          </ul>
         </div>
 
-        <!-- Math Education Enhancement -->
         <div class="project-item">
-          <div class="info">
-            <h3>Math Education Enhancement Project</h3>
-            <p><i>Think Academy, TAL Education; Dec 2023</i></p>
-            <ul>
-              <li>Created interactive tools with <strong>Java</strong> to generate personalized student performance reports.</li>
-              <li>Aligned outputs with state standards to support individualized learning paths.</li>
-            </ul>
+          <div class="exp-header">
+            <span class="exp-title">Math Education Enhancement Project</span>
+            <span class="exp-duration">Dec 2023</span>
           </div>
+          <p class="exp-meta">Think Academy, TAL Education</p>
+          <ul>
+            <li>Created interactive Java tools to generate personalized student performance reports.</li>
+            <li>Aligned outputs with state standards to support individualized learning paths.</li>
+          </ul>
         </div>
 
-        <!-- Real-Time Voting -->
         <div class="project-item">
-          <div class="info">
-            <h3>Real-Time Voting Client–Server Application</h3>
-            <p><i>Dec 2023</i></p>
-            <ul>
-              <li>Implemented client and server components of a polling app using <strong>TypeScript</strong>.</li>
-              <li>Enabled friends to conduct real-time voting for decision-making processes.</li>
-            </ul>
+          <div class="exp-header">
+            <span class="exp-title">Real-Time Voting Client–Server Application</span>
+            <span class="exp-duration">Dec 2023</span>
           </div>
+          <p class="exp-meta">Course Project</p>
+          <ul>
+            <li>Implemented client and server components of a real-time polling app in TypeScript.</li>
+            <li>Enabled friends to vote collaboratively in shared decision-making processes.</li>
+          </ul>
         </div>
 
-        <!-- Senerify -->
         <div class="project-item">
-          <div class="info">
-            <h3>Senerify – <a href="https://www.seattlechinesechamber.org/">Chinese Chamber of Commerce Program</a></h3>
-            <p><i>Nov 2022</i></p>
-            <ul>
-              <li>Collaborated as backend developer using <strong>JS</strong> and <strong>CSS</strong>.</li>
-              <li>Developed a prototype website aimed at supporting college students’ mental health needs.</li>
-            </ul>
+          <div class="exp-header">
+            <span class="exp-title">
+              Senerify –
+              <a class="about-link" href="https://www.seattlechinesechamber.org/" target="_blank" rel="noopener">
+                Chinese Chamber of Commerce Program
+              </a>
+            </span>
+            <span class="exp-duration">Nov 2022</span>
           </div>
+          <ul>
+            <li>Collaborated as backend developer using JavaScript and CSS.</li>
+            <li>Developed a prototype website to support college students' mental health needs.</li>
+          </ul>
         </div>
 
-        <!-- Buddies -->
         <div class="project-item">
-          <div class="info">
-            <h3>Buddies – Designed during <a href="https://dh22.dubhacks.co/">DubHacks</a></h3>
-            <p><i>Oct 2022</i></p>
-            <ul>
-              <li>Developed a social media app prototype with <strong>Figma</strong>.</li>
-              <li>Implemented basic functionality in <strong>Android Studio</strong>.</li>
-            </ul>
+          <div class="exp-header">
+            <span class="exp-title">
+              Buddies – Designed during
+              <a class="about-link" href="https://dh22.dubhacks.co/" target="_blank" rel="noopener">DubHacks</a>
+            </span>
+            <span class="exp-duration">Oct 2022</span>
           </div>
+          <ul>
+            <li>Developed a social media app prototype in Figma.</li>
+            <li>Implemented basic functionality in Android Studio.</li>
+          </ul>
         </div>
 
       </section>

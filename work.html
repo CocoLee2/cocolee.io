@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Experience – Coco K. Lee</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      fetch('navbar.html?v=' + Date.now())
+        .then(r => r.text())
+        .then(html => document.getElementById('navbar-container').innerHTML = html)
+        .catch(e => console.error('navbar load error:', e));
+
+      const toggle = document.getElementById('theme-toggle');
+      if (toggle) {
+        toggle.addEventListener('click', () => {
+          document.body.classList.toggle('dark');
+          toggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div id="navbar-container"></div>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark mode">🌙</button>
+  </header>
+
+  <div class="container">
+    <main>
+      <section id="work-experience">
+        <h2>Work Experience</h2>
+
+        <div class="experience-item">
+          <div class="exp-header">
+            <span class="exp-title">
+              Coding Instructor – Coding Mind Academy
+              <span class="exp-current">Current</span>
+            </span>
+            <span class="exp-duration">Jan 2025 – Present</span>
+          </div>
+          <p class="exp-meta">Seattle, US</p>
+          <ul>
+            <li>Designed and taught project-based curriculum covering C++, Java, and JavaScript, including data structures and OOP.</li>
+            <li>Mentored students in building end-to-end applications, emphasizing debugging and system thinking.</li>
+            <li>Guided development of interactive projects (games, apps), improving students' ability to independently design and implement systems.</li>
+          </ul>
+        </div>
+
+        <div class="experience-item">
+          <div class="exp-header">
+            <span class="exp-title">Math Content Teacher – Think Academy</span>
+            <span class="exp-duration">Aug 2022 – Jun 2024</span>
+          </div>
+          <p class="exp-meta">After-School Math Program · Seattle, US</p>
+          <ul>
+            <li>Delivered weekly math classes with comprehensive lesson plans tailored to diverse learning needs.</li>
+            <li>Regularly communicated with parents, providing detailed feedback on student progress and strategies.</li>
+          </ul>
+        </div>
+
+        <div class="experience-item">
+          <div class="exp-header">
+            <span class="exp-title">Software Development Intern – ByteDance</span>
+            <span class="exp-duration">Nov 2021 – Jan 2022</span>
+          </div>
+          <p class="exp-meta">Dali Education – Educator Service · Beijing, China</p>
+          <ul>
+            <li>Developed data processing pipelines using R and SQL to automate reporting workflows for 7K+ educators.</li>
+            <li>Designed and optimized database schemas and queries for efficient data retrieval.</li>
+            <li>Built API-driven analytics features to support real-time data access and dashboard visualization.</li>
+          </ul>
+        </div>
+
+        <div class="experience-item">
+          <div class="exp-header">
+            <span class="exp-title">Software Development Intern – Topos Inc.</span>
+            <span class="exp-duration">Oct 2020 – Nov 2021</span>
+          </div>
+          <p class="exp-meta">Interests Group Social Application · Shanghai, China</p>
+          <ul>
+            <li>Built and shipped responsive front-end features using JavaScript, CSS, and Figma designs.</li>
+            <li>Optimized search performance through query tuning and indexing.</li>
+            <li>Supported onboarding for 200+ users during early launch stage through iterative UI enhancements.</li>
+          </ul>
+        </div>
+
+      </section>
+    </main>
+  </div>
+</body>
+</html>
